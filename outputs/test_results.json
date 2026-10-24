@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "description": "username: admin, password: admin123",
+        "expected_result": "Authorization successful",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.53
+    },
+    {
+        "id": 2,
+        "description": "username: guest, password: guest123",
+        "expected_result": "Authorization failed",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.57
+    },
+    {
+        "id": 3,
+        "description": "username: invalid, password: invalid123",
+        "expected_result": "Authorization failed",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.53
+    },
+    {
+        "id": 4,
+        "description": "username: admin, password: invalid123",
+        "expected_result": "Authorization failed",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.53
+    },
+    {
+        "id": 5,
+        "description": "username: admin, password: admin1234",
+        "expected_result": "Authorization failed",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.53
+    }
+]

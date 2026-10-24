@@ -1,0 +1,22 @@
+[
+    {
+        "description": "Ввод валидного email и пароля от 8 символов на странице логина",
+        "expected_result": "Успешный вход, перенаправление в личный кабинет",
+        "boundary_values": "Длина пароля: 8 символов, 64 символа",
+        "quality_type": "good",
+        "readability": 0.95,
+        "clarity": 0.9,
+        "coverage": 0.85,
+        "consistency": 0.95
+    },
+    {
+        "description": "Тест кнопки",
+        "expected_result": "Работает",
+        "boundary_values": "Нет",
+        "quality_type": "bad",
+        "readability": 0.2,
+        "clarity": 0.3,
+        "coverage": 0.1,
+        "consistency": 0.2
+    }
+]
