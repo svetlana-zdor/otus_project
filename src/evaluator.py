@@ -19,6 +19,41 @@ class TestCaseQualityEvaluator(nn.Module):
     scores = torch.sigmoid(self.regressor(cls_embedding))
     return scores  # Интервал [0, 1]
 
+  def train_on_dataset(self, dataset, epochs=3, lr=1e-4):
+    self.train()
+    optimizer = torch.optim.AdamW(self.parameters(), lr=lr)
+    criterion = torch.nn.MSELoss()
+
+    for epoch in range(epochs):
+      for item in dataset:
+        text = f"{item.get('description', '')} {item.get('expected_result', '')} {item.get('boundary_values', '')}"
+        inputs = self.tokenizer(
+            text,
+            return_tensors="pt",
+            truncation=True,
+            max_length=128,
+            padding=True,
+        )
+
+        # Формируем целевой вектор из 4 метрик
+        target = torch.tensor(
+            [[
+                item.get("readability", 0.5),
+                item.get("clarity", 0.5),
+                item.get("coverage", 0.5),
+                item.get("consistency", 0.5),
+            ]],
+            dtype=torch.float,
+        )
+
+        preds = self.forward(inputs["input_ids"], inputs["attention_mask"])
+        loss = criterion(preds, target)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+    self.eval()
+
   def evaluate_text(self, text):
     self.eval()
     inputs = self.tokenizer(

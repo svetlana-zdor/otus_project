@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "description": "username: admin, password: admin123",
-        "expected_result": "Authorization successful",
-        "boundary_values": "Стандартные граничные значения",
+        "description": "valid_username",
+        "expected_result": "valid_password",
+        "boundary_values": "Authorization successful",
         "quality_status": "Успешно",
-        "score": 0.53
+        "score": 0.51
     },
     {
         "id": 2,
-        "description": "username: guest, password: guest123",
-        "expected_result": "Authorization failed",
-        "boundary_values": "Стандартные граничные значения",
+        "description": "valid_username",
+        "expected_result": "invalid_password",
+        "boundary_values": "Authorization failed",
         "quality_status": "Успешно",
-        "score": 0.57
+        "score": 0.52
     },
     {
         "id": 3,
-        "description": "username: invalid, password: invalid123",
-        "expected_result": "Authorization failed",
-        "boundary_values": "Стандартные граничные значения",
+        "description": "invalid_username",
+        "expected_result": "valid_password",
+        "boundary_values": "Authorization failed",
         "quality_status": "Успешно",
-        "score": 0.53
+        "score": 0.52
     },
     {
         "id": 4,
-        "description": "username: admin, password: invalid123",
-        "expected_result": "Authorization failed",
-        "boundary_values": "Стандартные граничные значения",
+        "description": "invalid_username",
+        "expected_result": "invalid_password",
+        "boundary_values": "Authorization failed",
         "quality_status": "Успешно",
         "score": 0.53
     },
     {
         "id": 5,
-        "description": "username: admin, password: admin1234",
-        "expected_result": "Authorization failed",
-        "boundary_values": "Стандартные граничные значения",
+        "description": "empty_username",
+        "expected_result": "valid_password",
+        "boundary_values": "Authorization failed",
         "quality_status": "Успешно",
-        "score": 0.53
+        "score": 0.5
     }
 ]

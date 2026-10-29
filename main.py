@@ -7,6 +7,10 @@ if __name__ == "__main__":
   print("=== Шаг 0. Генерация датасета с хорошими и плохими сценариями ===")
   dataset = generate_quality_dataset(model="qwen2.5:1.5b")
 
+  print("\n=== Шаг 0.1. Обучение NLP-модели (PyTorch) на сгенерированном датасете ===")
+  evaluator = TestCaseQualityEvaluator()
+  evaluator.train_on_dataset(dataset, epochs=3, lr=1e-4)
+
   print(
       "\n=== Шаг 1. Генерация тест-кейсов через Ollama (qwen2.5:1.5b) ==="
   )
@@ -21,10 +25,8 @@ if __name__ == "__main__":
     exit(1)
 
   print(
-      "\n=== Шаг 2. Оценка качества с помощью PyTorch модели (rubert-tiny2)"
-      " ==="
+      "\n=== Шаг 2. Оценка качества с помощью обученной PyTorch модели ==="
   )
-  evaluator = TestCaseQualityEvaluator()
   evaluations = []
 
   for case in cases:

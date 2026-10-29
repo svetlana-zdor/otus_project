@@ -9,10 +9,10 @@
 ![График распределения метрик](metrics_distribution.png)
 
 ## Список сценариев
-| Описание | Качество | Оценка |
-| --- | --- | --- |
-| username: admin, password: admin123 | Успешно | 0.53 |
-| username: guest, password: guest123 | Успешно | 0.57 |
-| username: invalid, password: invalid123 | Успешно | 0.53 |
-| username: admin, password: invalid123 | Успешно | 0.53 |
-| username: admin, password: admin1234 | Успешно | 0.53 |
+| Описание | Ожидаемый результат | Качество | Оценка |
+| --- | --- | --- | --- |
+| valid_username | valid_password | Успешно | 0.51 |
+| valid_username | invalid_password | Успешно | 0.52 |
+| invalid_username | valid_password | Успешно | 0.52 |
+| invalid_username | invalid_password | Успешно | 0.53 |
+| empty_username | valid_password | Успешно | 0.5 |

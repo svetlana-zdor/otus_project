@@ -75,12 +75,12 @@ def generate_report(test_cases, evaluations):
 ![График распределения метрик](metrics_distribution.png)
 
 ## Список сценариев
-| Описание | Качество | Оценка |
-| --- | --- | --- |
+| Описание | Ожидаемый результат | Качество | Оценка |
+| --- | --- | --- | --- |
 """
   for item in report_data:
     md_content += (
-        f"| {item['description']} | {item['quality_status']} |"
+        f"| {item['description']} | {item['expected_result']} | {item['quality_status']} |"
         f" {item['score']} |\n"
     )
 

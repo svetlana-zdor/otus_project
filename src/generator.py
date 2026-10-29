@@ -6,11 +6,11 @@ def generate_test_cases(prompt_text, model="qwen2.5:1.5b", num_cases=5):
   url = "http://localhost:11434/api/generate"
 
   system_prompt = (
-      "Ты профессиональный QA-инженер. Сгенерируй строго валидный"
-      f" JSON-массив из {num_cases} объектов без лишнего текста и комментариев."
-      " Каждый объект должен содержать ключи: 'description' (описание теста),"
-      " 'expected_result' (ожидаемый результат), 'boundary_values' (граничные"
-      " значения)."
+      "Ты профессиональный QA-инженер. Сгенерируй строго валидный "
+      f"JSON-массив из {num_cases} объектов без лишнего текста и комментариев. "
+      "Каждый объект должен содержать ключи: 'description' (описание самого действия, "
+      "например, 'Ввод валидного логина и пароля', а не конкретные тестовые данные), "
+      "'expected_result' (ожидаемый результат), 'boundary_values' (граничные значения)."
   )
 
   payload = {
@@ -27,7 +27,6 @@ def generate_test_cases(prompt_text, model="qwen2.5:1.5b", num_cases=5):
       raw_text = response.json()["response"]
       data = json.loads(raw_text)
       
-      # Если модель обернула массив в словарь, извлекаем список
       if isinstance(data, dict):
         for key in data:
           if isinstance(data[key], list):
@@ -39,7 +38,6 @@ def generate_test_cases(prompt_text, model="qwen2.5:1.5b", num_cases=5):
         if not isinstance(item, dict):
           continue
 
-        # Сбор всех текстовых строк на случай нестандартных ключей от LLM
         str_values = [
             str(v) for v in item.values() if isinstance(v, str) and len(v.strip()) > 2
         ]
