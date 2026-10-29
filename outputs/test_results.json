@@ -1,42 +1,50 @@
 [
     {
         "id": 1,
-        "description": "valid_user",
-        "expected_result": "valid_password",
+        "description": "valid_login",
+        "expected_result": "valid_login",
         "boundary_values": "Стандартные граничные значения",
-        "quality_status": "Успешно",
-        "score": 0.58
+        "quality_status": "Требует доработки",
+        "score": 0.42
     },
     {
         "id": 2,
-        "description": "invalid_user",
+        "description": "valid_password",
         "expected_result": "valid_password",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Успешно",
-        "score": 0.56
+        "score": 0.73
     },
     {
         "id": 3,
-        "description": "valid_user",
-        "expected_result": "invalid_password",
+        "description": "invalid_login",
+        "expected_result": "invalid_login",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Успешно",
-        "score": 0.56
+        "score": 0.54
     },
     {
         "id": 4,
-        "description": "empty_login",
-        "expected_result": "valid_password",
+        "description": "invalid_password",
+        "expected_result": "invalid_password",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Успешно",
-        "score": 0.55
+        "score": 0.8
     },
     {
         "id": 5,
-        "description": "valid_user",
+        "description": "empty_login",
+        "expected_result": "empty_login",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Требует доработки",
+        "score": 0.17
+    },
+    {
+        "id": 6,
+        "description": "empty_password",
         "expected_result": "empty_password",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Требует доработки",
-        "score": 0.44
+        "score": 0.29
     }
 ]
