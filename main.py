@@ -9,7 +9,8 @@ if __name__ == "__main__":
 
   print("\n=== Шаг 0.1. Обучение NLP-модели (PyTorch) на сгенерированном датасете ===")
   evaluator = TestCaseQualityEvaluator()
-  evaluator.train_on_dataset(dataset, epochs=3, lr=1e-4)
+  # Обучаем модель на датасете (увеличенное число эпох помогает лучше разделять оценки)
+  evaluator.train_on_dataset(dataset, epochs=10, lr=1e-4)
 
   print(
       "\n=== Шаг 1. Генерация тест-кейсов через Ollama (qwen2.5:1.5b) ==="
