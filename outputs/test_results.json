@@ -1,50 +1,42 @@
 [
     {
         "id": 1,
-        "description": "valid_login",
-        "expected_result": "valid_login",
+        "description": "valid_user",
+        "expected_result": "valid_password",
         "boundary_values": "Стандартные граничные значения",
-        "quality_status": "Требует доработки",
-        "score": 0.4
+        "quality_status": "Успешно",
+        "score": 0.58
     },
     {
         "id": 2,
-        "description": "valid_password",
+        "description": "invalid_user",
         "expected_result": "valid_password",
         "boundary_values": "Стандартные граничные значения",
-        "quality_status": "Требует доработки",
-        "score": 0.49
+        "quality_status": "Успешно",
+        "score": 0.56
     },
     {
         "id": 3,
-        "description": "invalid_login",
-        "expected_result": "invalid_login",
-        "boundary_values": "Стандартные граничные значения",
-        "quality_status": "Требует доработки",
-        "score": 0.46
-    },
-    {
-        "id": 4,
-        "description": "invalid_password",
+        "description": "valid_user",
         "expected_result": "invalid_password",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Успешно",
-        "score": 0.52
+        "score": 0.56
+    },
+    {
+        "id": 4,
+        "description": "empty_login",
+        "expected_result": "valid_password",
+        "boundary_values": "Стандартные граничные значения",
+        "quality_status": "Успешно",
+        "score": 0.55
     },
     {
         "id": 5,
-        "description": "empty_login",
-        "expected_result": "empty_login",
+        "description": "valid_user",
+        "expected_result": "empty_password",
         "boundary_values": "Стандартные граничные значения",
         "quality_status": "Требует доработки",
         "score": 0.44
-    },
-    {
-        "id": 6,
-        "description": "empty_password",
-        "expected_result": "empty_password",
-        "boundary_values": "Стандартные граничные значения",
-        "quality_status": "Успешно",
-        "score": 0.51
     }
 ]

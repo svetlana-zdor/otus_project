@@ -1,9 +1,9 @@
 # Отчёт о тестировании сценариев
 
 ## Общая информация
-- Количество сценариев: 6
-- Успешные: 2
-- Неуспешные: 4
+- Количество сценариев: 5
+- Успешные: 4
+- Неуспешные: 1
 
 ## Распределение качества
 ![График распределения метрик](metrics_distribution.png)
@@ -11,9 +11,8 @@
 ## Список сценариев
 | Описание | Ожидаемый результат | Качество | Оценка |
 | --- | --- | --- | --- |
-| valid_login | valid_login | Требует доработки | 0.4 |
-| valid_password | valid_password | Требует доработки | 0.49 |
-| invalid_login | invalid_login | Требует доработки | 0.46 |
-| invalid_password | invalid_password | Успешно | 0.52 |
-| empty_login | empty_login | Требует доработки | 0.44 |
-| empty_password | empty_password | Успешно | 0.51 |
+| valid_user | valid_password | Успешно | 0.58 |
+| invalid_user | valid_password | Успешно | 0.56 |
+| valid_user | invalid_password | Успешно | 0.56 |
+| empty_login | valid_password | Успешно | 0.55 |
+| valid_user | empty_password | Требует доработки | 0.44 |

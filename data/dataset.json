@@ -1,22 +1,62 @@
 [
     {
-        "description": "Ввод валидного email и пароля от 8 символов на странице логина",
-        "expected_result": "Успешный вход, перенаправление в личный кабинет",
-        "boundary_values": "Длина пароля: 8 символов, 64 символа",
+        "description": "Оценка качества при использовании простого метода",
+        "expected_result": "Оценка качества при использовании простого метода",
+        "boundary_values": "0, 1, 100",
         "quality_type": "good",
-        "readability": 0.95,
-        "clarity": 0.9,
-        "coverage": 0.85,
+        "readability": 0.85,
+        "clarity": 0.92,
+        "coverage": 0.9,
         "consistency": 0.95
     },
     {
-        "description": "Тест кнопки",
-        "expected_result": "Работает",
-        "boundary_values": "Нет",
+        "description": "Оценка качества при использовании сложного метода",
+        "expected_result": "Оценка качества при использовании сложного метода",
+        "boundary_values": "0, 1, 100",
+        "quality_type": "good",
+        "readability": 0.9,
+        "clarity": 0.95,
+        "coverage": 0.95,
+        "consistency": 0.98
+    },
+    {
+        "description": "Оценка качества при использовании неправильного метода",
+        "expected_result": "Оценка качества при использовании неправильного метода",
+        "boundary_values": "0, 1, 100",
+        "quality_type": "bad",
+        "readability": 0.5,
+        "clarity": 0.3,
+        "coverage": 0.5,
+        "consistency": 0.4
+    },
+    {
+        "description": "Оценка качества при использовании непонятного метода",
+        "expected_result": "Оценка качества при использовании непонятного метода",
+        "boundary_values": "0, 1, 100",
         "quality_type": "bad",
         "readability": 0.2,
-        "clarity": 0.3,
+        "clarity": 0.1,
+        "coverage": 0.2,
+        "consistency": 0.1
+    },
+    {
+        "description": "Оценка качества при использовании неправильного метода с высоким баллом",
+        "expected_result": "Оценка качества при использовании неправильного метода с высоким баллом",
+        "boundary_values": "0, 1, 100",
+        "quality_type": "bad",
+        "readability": 0.6,
+        "clarity": 0.7,
+        "coverage": 0.6,
+        "consistency": 0.7
+    },
+    {
+        "description": "Оценка качества при использовании непонятного метода с низким баллом",
+        "expected_result": "Оценка качества при использовании непонятного метода с низким баллом",
+        "boundary_values": "0, 1, 100",
+        "quality_type": "bad",
+        "readability": 0.1,
+        "clarity": 0.05,
         "coverage": 0.1,
-        "consistency": 0.2
+        "consistency": 0.05
     }
 ]
